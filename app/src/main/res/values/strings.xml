@@ -8,8 +8,10 @@
     <string name="move_to_next">Next Activity</string>
     <string name="second_activity">Second Activity</string>
     <string name="third_activity">Third Activity</string>
+    <string name="fourth_activity">Fourth Activity</string>
 
     <string name="home">Home</string>
     <string name="second">Second</string>
     <string name="third">Third</string>
+    <string name="fourth">Fourth</string>
 </resources>

@@ -7,21 +7,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class ThirdActivity extends AppCompatActivity {
-
+public class FourthActivity extends AppCompatActivity {
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_third);
+    public void onCreate(Bundle savedInstanceState) {
 
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_fourth);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setSelectedItemId(R.id.third_id);
+        bottomNavigationView.setSelectedItemId(R.id.fourth_id);
 
-        // Perform item selected listener
-        bottomNavigationView.setOnItemSelectedListener(item -> {
-
-            switch (item.getItemId()) {
+        bottomNavigationView.setOnItemSelectedListener( item -> {
+            switch(item.getItemId()){
                 case R.id.home_id:
                     startActivity(new Intent(getApplicationContext(), FirstActivity.class));
                     return true;
@@ -29,12 +26,14 @@ public class ThirdActivity extends AppCompatActivity {
                     startActivity(new Intent(getApplicationContext(), SecondActivity.class));
                     return true;
                 case R.id.third_id:
+                    startActivity(new Intent(getApplicationContext(),ThirdActivity.class));
                     return true;
                 case R.id.fourth_id:
-                    startActivity(new Intent(getApplicationContext(), FourthActivity.class));
                     return true;
             }
             return false;
+
         });
+
     }
 }
