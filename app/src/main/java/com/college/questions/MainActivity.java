@@ -3,6 +3,7 @@ package com.college.questions;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -27,5 +28,17 @@ public class MainActivity extends AppCompatActivity {
         // Result should contain 5 multiplied by number chosen
         // Display should be prefixed with the '$' sign such as $15
         // Reset should clear all the fields
+        Button btnPay = findViewById(R.id.btnPayId);
+        btnPay.setOnClickListener(click ->{
+            Integer number = Integer.parseInt(numberStr.getText().toString());
+            int total = number * 5;
+            resultTv.setText("$" + total);
+        });
+
+        Button btnClear = findViewById(R.id.btnResetId);
+        btnClear.setOnClickListener( click ->{
+            resultTv.setText("");
+            numberStr.setText("");
+        });
     }
 }
