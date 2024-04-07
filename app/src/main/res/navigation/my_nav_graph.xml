@@ -10,15 +10,36 @@
         android:id="@+id/inboxFragment"
         android:name="com.college.quiz1_question.InboxFragment"
         android:label="fragment_inbox"
-        tools:layout="@layout/fragment_inbox" />
+        tools:layout="@layout/fragment_inbox" >
+        <action
+            android:id="@+id/action_inboxFragment_to_outboxFragment"
+            app:destination="@id/outboxFragment" />
+    </fragment>
     <fragment
         android:id="@+id/outboxFragment"
         android:name="com.college.quiz1_question.OutboxFragment"
         android:label="fragment_outbox"
-        tools:layout="@layout/fragment_outbox" />
+        tools:layout="@layout/fragment_outbox" >
+        <action
+            android:id="@+id/action_outboxFragment_to_catFragment"
+            app:destination="@id/catFragment" />
+    </fragment>
     <fragment
         android:id="@+id/helpFragment"
         android:name="com.college.quiz1_question.HelpFragment"
         android:label="fragment_help"
-        tools:layout="@layout/fragment_help" />
+        tools:layout="@layout/fragment_help" >
+        <action
+            android:id="@+id/action_helpFragment_to_inboxFragment"
+            app:destination="@id/inboxFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/catFragment"
+        android:name="com.college.quiz1_question.CatFragment"
+        android:label="fragment_cat"
+        tools:layout="@layout/fragment_cat" >
+        <action
+            android:id="@+id/action_catFragment_to_helpFragment"
+            app:destination="@id/helpFragment" />
+    </fragment>
 </navigation>

@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HelpFragment">
+    tools:context=".CatFragment">
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="@string/help_fragment"
+        android:text="@string/cat_fragment"
         android:textSize="34sp" />
 
     <Button

@@ -3,8 +3,12 @@
     <string name="inbox">Inbox</string>
     <string name="outbox">Outbox</string>
     <string name="help">Help</string>
+    <string name="cat">Cat</string>
     <string name="inbox_fragment">Inbox fragment</string>
     <string name="outbox_fragment">Outbox fragment</string>
     <string name="help_fragment">Help fragment</string>
+    <string name="cat_fragment">Cat fragment</string>
+    <string name="movetonext">Next Fragment</string>
+
 
 </resources>

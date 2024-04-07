@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
 
@@ -11,5 +11,13 @@
             android:id="@+id/outboxFragment"
             android:icon="@android:drawable/checkbox_on_background"
             android:title="@string/outbox" />
+        <item
+            android:id="@+id/helpFragment"
+            android:icon="@android:drawable/ic_menu_help"
+            android:title="@string/help" />
+        <item
+            android:id="@+id/catFragment"
+            android:icon="@drawable/cat"
+            android:title="@string/cat" />
 
 </menu>
