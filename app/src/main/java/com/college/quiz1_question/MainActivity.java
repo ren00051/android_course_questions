@@ -79,13 +79,23 @@ public class MainActivity extends AppCompatActivity {
             // Extract the string:
             //      sb.toString()
 
+            StringBuilder sb = new StringBuilder();
+            for (Restaurant resto:listOfRestaurants) {
+                sb.append(resto.getName());
+                sb.append("\n");
+            }
+            String restoNames = sb.toString();
+
             // TODO (5): Display the result on the TextView
+            descriptionTv.setText(restoNames);
 
         });
     }
 
+
     //TODO (6): Clear the output textview
     public void clear(View v) {
+        descriptionTv.setText("");
 
     }
 
@@ -104,10 +114,15 @@ public class MainActivity extends AppCompatActivity {
             for (int i = 0; i < items.length(); i++){
 
                 //TODO (1): Extract the name and description
+                JSONObject restoJson = items.getJSONObject(i);
+                String restoName = restoJson.getString("name");
+                String description = restoJson.getString("description");
 
                 //TODO (2) : create a Restaurant object
+                Restaurant resto = new Restaurant(restoName, description);
 
-                //TODO (3): Add the restaurant object to the lisat
+                //TODO (3): Add the restaurant object to the list
+                mylist.add(resto);
 
             }
         } catch (Exception e) {
