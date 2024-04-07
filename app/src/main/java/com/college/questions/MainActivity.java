@@ -5,8 +5,10 @@ import androidx.core.content.ContextCompat;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 /**
@@ -66,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
      * @param view The view (Button) that was clicked.
      */
     public void countUp(View view) {
+        mCount +=1;
+        mShowCountTextView.setText(Integer.toString(mCount));
     }
 
     //TODO 2
@@ -78,6 +82,12 @@ public class MainActivity extends AppCompatActivity {
      * @param view The view (Button) that was clicked.
      */
     public void reset(View view) {
+        mCount =0;
+        mShowCountTextView.setText(Integer.toString(mCount));
+        mColor = ContextCompat.getColor(this, R.color.default_background);
+        mShowCountTextView.setBackgroundColor(mColor);
+        SharedPreferences.Editor editor = mPreferences.edit();
+        editor.clear().apply();
     }
 
     //TODO 3
@@ -88,6 +98,12 @@ public class MainActivity extends AppCompatActivity {
      * @param view The view (Button) that was clicked.
      */
     public void savePrefs(View view) {
+        SharedPreferences.Editor editor = mPreferences.edit();
+        editor.putInt(COUNT_KEY, mCount);
+        editor.putInt(COLOR_KEY,mColor);
+        editor.apply();
+        Log.d("Prefered Count and Color: ", mCount + " " + mColor);
+        Toast.makeText(MainActivity.this,"preference saved.",Toast.LENGTH_SHORT).show();
     }
 
     //TODO 4
@@ -99,6 +115,20 @@ public class MainActivity extends AppCompatActivity {
      * @param view The view (Button) that was clicked.
      */
     public void restaurePrefs(View view) {
+        int defaultColor = ContextCompat.getColor(this, R.color.green_background);
+        int restoredColor = mPreferences.getInt(COLOR_KEY,defaultColor);
+        int restoredCount = mPreferences.getInt(COUNT_KEY,0);
+        // Log the restored count and color
+        Log.d("Restored Count and Color: ", restoredCount + " " + restoredColor);
+
+
+        mShowCountTextView.setBackgroundColor(restoredColor);
+        mShowCountTextView.setText(Integer.toString(restoredCount));
+
+        mCount = restoredCount;
+        mColor = restoredColor;
+
+
     }
 
 }
