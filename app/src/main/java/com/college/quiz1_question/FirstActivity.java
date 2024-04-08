@@ -62,6 +62,10 @@ public class FirstActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
             startActivity(intent);
         }
+        else if ( id == R.id.move_to_third) {
+            Intent intent = new Intent(this, ThirdActivity.class);
+            startActivity(intent);
+        }
 
         return super.onOptionsItemSelected(item);
     }
