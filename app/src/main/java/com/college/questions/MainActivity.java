@@ -19,13 +19,14 @@ public class MainActivity extends AppCompatActivity {
 
     static private final String TAG = "MainActivity";
 
-    Button btnNext = findViewById(R.id.btn_move_to_next);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button btnNext = findViewById(R.id.btn_move_to_next);
 
         btnNext.setOnClickListener(v -> {
             // Move to SecondActivity

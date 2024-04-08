@@ -23,6 +23,8 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
+        myList = new ArrayList<>();
+        initData(myList);
         myAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, myList);
 
         myListView = findViewById(R.id.listView);
