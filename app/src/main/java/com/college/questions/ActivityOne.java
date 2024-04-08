@@ -1,7 +1,12 @@
 package com.college.questions;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+
 
 /*
 
@@ -24,5 +29,15 @@ public class ActivityOne extends AppCompatActivity {
         //TODO 2 - Save information to pass : Name and Rank
 
         //TODO 3 - start the activity when the button is clicked
+        Button btn = findViewById(R.id.gotoSecondId);
+        btn.setOnClickListener(c->{
+            EditText name = findViewById(R.id.nameId);
+            EditText rank = findViewById(R.id.rankId);
+
+            Intent intent = new Intent(ActivityOne.this, ActivityTwo.class);
+            intent.putExtra("name", name.getText().toString());
+            intent.putExtra("rank", Integer.parseInt(rank.getText().toString()));
+            startActivity(intent);
+        });
     }
 }
