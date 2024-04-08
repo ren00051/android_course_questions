@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         viewModel = new ViewModelProvider(this).get(CurrencyConverterViewModel.class);
 
+
         EditText inputView = findViewById(R.id.entryId);
         Float inputAmount = viewModel.inputAmount.getValue();
         if (inputAmount != null) {
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (!inputAmount.isEmpty()) {
             Float inputAmountDecimal = Float.valueOf(inputAmount);
+            //postValue() is to set a new value
             viewModel.inputAmount.postValue(inputAmountDecimal);
 
             Float resultFloat = inputAmountDecimal * CONVERSION_RATE;
